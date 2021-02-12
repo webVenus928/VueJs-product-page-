@@ -63,7 +63,8 @@ window.addEventListener("load", function () {
     function selectedItem(items) {
         let allItem = document.querySelectorAll(items);
         allItem.forEach(each => {
-            each.addEventListener('click', function () {
+            each.addEventListener('click', function (e) {
+                e.preventDefault();
                 allItem.forEach(each => {
                     each.classList.remove('active');
                 })

@@ -18,6 +18,9 @@
   --color-two: #6B7280;
   --color-three: #1E96D4;
   --color-four: #EEEFF2;
+  --color-five: #66BEEB;
+  --color-six: #D8DCE0;
+  --color-seven: #B6BCC6;
   --bg-one: #F5F5F7;
 
 }
@@ -122,6 +125,20 @@
 .product-slider-nav li.active a {
 	border-color: var(--color-one);
 }
+.product-slider-nav li a:hover {
+  border-color: var(--color-seven);
+}
+.product-slider-nav li a:focus{
+  border-color: var(--color-seven);
+  box-shadow: 0 0 0 3px var(--color-six);
+  outline: none;
+}
+.product-slider-nav li.active a {
+	border-color: var(--color-three);
+}
+.product-slider-nav li.active a:focus {
+  box-shadow: 0 0 0 3px var(--color-six);
+}
 
   /* product slider css end */
 /* Tab Css start  */
@@ -224,9 +241,23 @@
 	padding: 20px 22px;
 	transition: .3s;
 	cursor: pointer;
+	display: block;
+	text-decoration: none;
+	color: var(--color-one);
+}
+.cmn-ct-wrapper:hover {
+  border-color: var(--color-seven);
+}
+.cmn-ct-wrapper:focus {
+  border-color: var(--color-seven);
+  box-shadow: 0 0 0 3px var(--color-six);
+  outline: none;
 }
 .cmn-ct-wrapper.active {
 	border-color: var(--color-three);
+}
+.cmn-ct-wrapper.active:focus {
+  box-shadow: 0 0 0 3px var(--color-six);
 }
 .cmn-ct-wrapper h5 {
   font-size: 14px;
@@ -343,6 +374,12 @@
 	padding: 16px 26px;
 	border-radius: 8px;
 	display: inline-block;
+}
+.buy-btn:hover {
+  background-color: var(--color-five);
+}
+.buy-btn:focus {
+	box-shadow: 0px 0px 0px 3px var(--color-six);
 }
 .ft-lr .buy-btn {
   margin-left: 30px;
