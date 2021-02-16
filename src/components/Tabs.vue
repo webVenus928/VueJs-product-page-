@@ -1,14 +1,30 @@
 <template>
   <div id="c-tab">
     <ul class="tab-trigger">
-      <li v-for="(item, index) in tabsData" :key="index" @click="setSeletedItem(item)" :class=" item.id == seleted.id ? 'active' :'' ">
-        <a href="#">{{item.title}}</a>
+      <li @click="setSeletedItem('overview')" :class="seleted == 'overview' ? 'active' :'' ">
+        <a href="#overview">Overview</a>
+      </li>
+      <li @click="setSeletedItem('features')" :class="seleted == 'features' ? 'active' :'' ">
+        <a href="#features">Features</a>
+      </li>
+      <li @click="setSeletedItem('whatInBox')" :class="seleted == 'whatInBox' ? 'active' :'' ">
+        <a href="#whatInBox">WhatInBox</a>
       </li>
     </ul>
     <div class="tab-content-wrapper">
-      <div v-for="(item, index) in tabsData" :key="index" :class=" item.id == seleted.id ? 'tb-pane active' :'tb-pane' " id="overview">
+      <div :class="seleted == 'overview' ? 'tb-pane active' :'tb-pane' ">
         <div class="tb-content">
-          <p>{{item.content}}</p>
+          <p>{{tabsData.overview}}</p>
+        </div>
+      </div>
+      <div :class="seleted == 'features' ? 'tb-pane active' :'tb-pane' ">
+        <div class="tb-content">
+          <p>{{tabsData.features}}</p>
+        </div>
+      </div>
+      <div :class="seleted == 'whatInBox' ? 'tb-pane active' :'tb-pane' ">
+        <div class="tb-content">
+          <p>{{tabsData.whatInBox}}</p>
         </div>
       </div>
     </div>
@@ -25,16 +41,13 @@ export default {
   },
     data(){
         return{
-            seleted: {}
+            seleted: 'overview'
         }
     },
     methods: {
     setSeletedItem(item){
       this.seleted = item;
-    }
-  },
-  created(){
-    this.setSeletedItem(this.tabsData[0])
+    },
   }
 };
 </script>

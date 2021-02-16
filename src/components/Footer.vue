@@ -16,7 +16,7 @@
                 <div class="ft-lr">
                     <div class="estimate-price-wrapper">
                         <div class="estimate-price">
-                            $<span id="final-price">295.95</span>
+                            $<span id="final-price">{{price}}</span>
                         </div>
                         <p>Need financing? Learn <span class="m-none">more</span></p>
                     </div>
@@ -29,7 +29,15 @@
 
 <script>
 export default {
-
+computed: {
+    price() {
+      const price = this.$store.getters.product.price;
+      const color = this.$store.getters.color.price;
+      const warrenty = this.$store.getters.warrenty.price;
+      const feature = this.$store.getters.feature.price;
+      return price+color+warrenty+feature;
+    },
+  },
 }
 </script>
 

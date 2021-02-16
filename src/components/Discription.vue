@@ -10,7 +10,7 @@
         Starting at
         <strong>$<span class="pd-starting-price">295.95</span></strong>
       </div>
-      <Tabs :tabsData="tabsData"/>
+      <Tabs :tabsData="discription"/>
     </div>
   </div>
 </template>
@@ -18,7 +18,7 @@
 import Tabs from "../components/Tabs";
 export default {
   props: {
-    tabsData: {
+    discription: {
       require: true,
       default: []
     }
